@@ -1,11 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+
+
 * {
     box-sizing: border-box;
 }
 
+header, main {
+    margin: 1.5rem;
+  }
+
 body {
+    background: white;
+    font-family: 'Raleway', sans-serif;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.5;
     margin: 0px;
-    font-family: Arial, sans-serif;
+    font-size: large;
 }
+
+a {
+    color: #87f8e7;
+    font-size: large;
+}
+
+#link1 {
+    color: #ee535e;
+    font-weight: 700;
+}
+#link2 {
+    color: #40da67;
+    font-weight: 700;
+}
+#link3 {
+    color: #ff8e31;
+    font-weight: 700;
+}
+#link4 {
+    color: #5389ee;
+    font-weight: 700;
+}
+#link5 {
+    color: #9f28e4;
+    font-weight: 700;
+}
+
+main {
+    background-color: #F06A73;
+    background-image: linear-gradient(white 2px, transparent 2px),
+    linear-gradient(90deg, white 2px, transparent 2px),
+    linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+    background-size:100px 100px, 100px 100px, 10px 10px, 10px 10px;
+    background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px; 
+}
+
 header, section {
     padding: 20px;
 }
@@ -14,7 +65,38 @@ p, li {
 }
 
 #inspiration {
-    background-color: #F0F0F0;
+    background-color: #F6E8EA;
     padding-top: 40px;
     padding-bottom: 40px;
 }
+
+/* Typography */
+
+h1, h2, h3, h4 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font:  4em/1 "Raleway";
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    padding-right: .75em;
+}
+h2 {
+    font: 1.3em "Open Sans", sans-serif;
+    font-weight: normal;
+}
+  
+/* h3 {
+  font: 500 2.4em/1.25 "Raleway";
+  color: #4e4e4e;
+}
+
+h4 {
+  font: italic 1.5em/1.25 "Open Sans", serif;
+  color: #4e4e4e;
+} */
+
+
+
