@@ -1,0 +1,39 @@
+main {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "list paragraph";
+    background-color: rgb(255, 255, 166);
+}
+
+.bulleted_list {
+    grid-area: list;
+    padding: 20px;
+    padding-top: 5px;
+    padding-right: 0px;
+}
+
+.bulleted_list ul {
+    background-color: white;
+}
+
+
+.paragraph {
+    grid-area: paragraph;
+    margin: 5px;
+    padding: 20px;
+}
+
+.paragraph p {
+    background-color: white;
+    min-height: 300px;
+    height: fit-content;
+    padding: 7px;
+}
+
+/* [contenteditable="true"]:active, */
+[contenteditable="true"]:focus{
+  border:none;
+  outline:solid rgba(190, 190, 190, 0.883) 2px;
+}
