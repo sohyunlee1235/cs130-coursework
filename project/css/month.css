@@ -32,6 +32,10 @@ main {
     padding: 7px;
 }
 
+.paragraph i {
+    color: rgb(63, 63, 63);
+}
+
 /* [contenteditable="true"]:active, */
 [contenteditable="true"]:focus{
   border:none;

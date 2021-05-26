@@ -3,8 +3,8 @@
    <head>
         <!-- stylesheets and metadata go here -->
        <title>My Planner</title>       
-       <link rel="stylesheet" href="style.css">
-       <link rel="stylesheet" href="today.css">
+       <link rel="stylesheet" href="css/style.css">
+       <link rel="stylesheet" href="css/today.css">
    </head>
    <body>
        <header>
@@ -35,14 +35,20 @@
                 </ul>
             </section>
             <section class="time">
+                <div id="time">
+                    <h2>Time</h2>  
+                    <!-- <a href="https://dayspedia.com/widgets/digit/o" id="time_is_link" rel="nofollow">T</a> -->
+                    <span id="Chicago_z123"></span>
+                    <script src="//widget.time.is/t.js"></script>
+                    <script>
+                        time_is_widget.init({Chicago_z123:{time_format:"12hours:minutesAMPM"}});
+                    </script>
+                </div>
                 <div id="date">
                     <h2>Date</h2>                
                 </div>
-                <div id="time">
-                    <h2>Time</h2>                
-                </div>
             </section>
         </main>
-        <script type="text/javascript" src="tab1.js"></script>
+        <script type="text/javascript" src="js/tab1.js"></script>
    </body>
 </html>

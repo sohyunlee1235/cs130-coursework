@@ -16,6 +16,19 @@ const search = (ev) => {
     }
 }
 
+const play_the_music = (ev) => {
+    const elem = ev.currentTarget;
+    const previewURL = elem.dataset.previewTrack;
+    if (previewURL !== null) {
+        audioPlayer.setAudioFile(previewURL);
+        audioPlayer.play();
+        document.querySelector("footer .track-item").setAttribute('data-preview-track', `${previewURL}`);
+    } else {
+        console.log('No preview available.');
+    };
+    document.querySelector("footer .track-item").innerHTML = elem.innerHTML;    
+}
+
 const getTracks = (term) => {
     console.log(`
         get tracks from spotify based on the search term
@@ -50,7 +63,7 @@ const getTracks = (term) => {
                         track_preview = tracks[i].preview_url;
                         i += 1
                         document.querySelector('#tracks').innerHTML += `
-                            <section class="track-item preview" data-preview-track="${track_preview}">
+                            <section class="track-item preview" data-preview-track="${track_preview}" onclick="play_the_music(event);">
                                 <img src="${track_image}">
                                 <i class="fas play-track fa-play" aria-hidden="true"></i>
                                 <div class="label">
@@ -71,7 +84,41 @@ const getAlbums = (term) => {
         get albums from spotify based on the search term
         "${term}" and load them into the #albums section 
         of the DOM...`);
-       
+    const album_search_term = term;
+    let url = `https://www.apitutor.org/spotify/simple/v1/search?type=album&q=${album_search_term}`;
+    fetch(url)
+        .then((result) => {
+                return result.json()
+            }
+        ).then((albums) => {
+            if (albums.length == 0 ){
+                document.querySelector("#albums").innerHTML=`
+                <p>No albums were returned.`
+            } else {
+                let i=0
+                document.querySelector('#albums').innerHTML=""
+                for (album of albums) {
+                    album_name = albums[i].name;
+                    album_id= albums[i].id;
+                    album_image = albums[i].image_url;
+                    album_link = albums[i].spotify_url;
+                    i += 1
+                    document.querySelector('#albums').innerHTML += `
+                    <section class="album-card" id="${album_id}">
+                        <div>
+                            <img src="${album_image}">
+                            <h3>${album_name}</h3>
+                            <div class="footer">
+                                <a href="${album_link}" target="_blank">
+                                    view on spotify
+                                </a>
+                            </div>
+                        </div>
+                    </section>`
+                    }                
+                }
+            }
+        );
 };
 
 const getArtist = (term) => {
