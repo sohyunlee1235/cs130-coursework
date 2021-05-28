@@ -6,7 +6,7 @@
        <link rel="stylesheet" href="css/style.css">
        <link rel="stylesheet" href="css/today.css">
    </head>
-   <body>
+   <body onload="check_edits()">
        <header>
            <h1><a href="index.html">Daily Planner</a></h1>
        </header> 
@@ -17,36 +17,38 @@
        <main>
             <section class="bulleted_list">
                 <h2>Today's tasks</h2>
-                <ul>
-                    <li>Homework 1</li>
-                        <ul>
-                        <li><a href="hw01/01_cssgrid/index.html">CSS grid</a> </li>
-                        <li><a href="hw01/02_flexbox/index.html">Flexbox</a> </li> </ul>
-                    <li>Homework 2 </li>
-                        <ul> <li><a href="hw02/index.html">Spotify Player</a> </li> </ul>
-                    <li>Homework 3 </li>
-                        <ul> <li><a href="hw03/index.html">Photo Carousel</a> </li> </ul>
-                </ul>
-                <ul>
-                    <li><a href="tutorial01/index.html">Tutorial 1</a> </li>
-                    <li><a href="tutorial03/index.html">Tutorial 3</a> </li>
-                    <li><a href="tutorial05/listing.html">Tutorial 5</a> </li>
-                    <li><a href="hw04/your_task/index.html">Tutorial 7</a> </li>
-                </ul>
+                <div id="immediate_list">
+                    <ul contenteditable="true" id="first_list" onkeydown="tab()" onkeyup="backspace()">
+                        <li>Math homework</li>
+                        <li>essay </li>
+                        <li>volunteering </li>
+                        <p contenteditable="false" id="more" onclick="create_new_bullet_first(event)">
+                            <span>&#43;</span>
+                        </p>
+                    </ul>
+                </div>
+                <div id="extra_list">
+                    <ul contenteditable="true" id="second_list" onkeydown="tab()" onkeyup="backspace()">
+                        <li>Tutorial 1 </li>
+                        <li>Tutorial 3</li>
+                        <li>Tutorial 5</li>
+                        <li>finals </li>
+                        <p contenteditable="false" id="more" onclick="create_new_bullet_second(event)">
+                            <span>&#43;</span>
+                        </p>
+                    </ul>
+                </div>
+                <div id="#save">
+                    <button type="button" onclick="save_edits()">Save All Changes</button>
+                </div>
             </section>
-            <section class="time">
-                <div id="time">
-                    <h2>Time</h2>  
-                    <!-- <a href="https://dayspedia.com/widgets/digit/o" id="time_is_link" rel="nofollow">T</a> -->
-                    <span id="Chicago_z123"></span>
-                    <script src="//widget.time.is/t.js"></script>
-                    <script>
-                        time_is_widget.init({Chicago_z123:{time_format:"12hours:minutesAMPM"}});
-                    </script>
-                </div>
-                <div id="date">
-                    <h2>Date</h2>                
-                </div>
+            <section class="time">  
+                <!-- <h2><a id="time_is_link" rel="nofollow">Time in Chicago: <br></a></h2> -->
+                <span id="Chicago_z123" ></span>
+                <script src="//widget.time.is/en.js"></script>
+                <script>
+                time_is_widget.init({Chicago_z123:{template:"TIME<br><br>DATE", time_format:"12hours:minutesAMPM", date_format:"dayname, monthname dnum, year"}});
+                </script>
             </section>
         </main>
         <script type="text/javascript" src="js/tab1.js"></script>

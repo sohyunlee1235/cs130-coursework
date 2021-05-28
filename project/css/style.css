@@ -15,7 +15,7 @@ body h2 {
 body {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 130px calc(100vh - 130px);
+    grid-template-rows: 130px auto;
     grid-template-areas: 
         "title tabs"
         "main main";

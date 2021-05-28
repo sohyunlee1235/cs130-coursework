@@ -6,7 +6,7 @@
        <link rel="stylesheet" href="css/style.css">
        <link rel="stylesheet" href="css/month.css">
    </head>
-   <body>
+   <body onload="check_edits()">
        <header>
            <h1><a href="index.html">Daily Planner</a></h1>
        </header> 
@@ -17,26 +17,22 @@
        <main>
             <section class="bulleted_list">
                 <h2>This Month's tasks</h2>
-                <ul>
-                    <li>Homework 1</li>
-                        <ul>
-                        <li><a href="hw01/01_cssgrid/index.html">CSS grid</a> </li>
-                        <li><a href="hw01/02_flexbox/index.html">Flexbox</a> </li> </ul>
-                    <li>Homework 2 </li>
-                        <ul> <li><a href="hw02/index.html">Spotify Player</a> </li> </ul>
-                    <li>Homework 3 </li>
-                        <ul> <li><a href="hw03/index.html">Photo Carousel</a> </li> </ul>
-                </ul>
-                <ul>
-                    <li><a href="tutorial01/index.html">Tutorial 1</a> </li>
-                    <li><a href="tutorial03/index.html">Tutorial 3</a> </li>
-                    <li><a href="tutorial05/listing.html">Tutorial 5</a> </li>
-                    <li><a href="hw04/your_task/index.html">Tutorial 7</a> </li>
-                </ul>
+                <div id="month_list">
+                    <ul contenteditable="true" id="first_list" onkeydown="tab()">
+                        <li>registration</li>
+                        <li>Summer internship </li>
+                        <p contenteditable="false" id="more" onclick="create_new_bullet_first(event)">
+                            <span>&#43;</span>
+                        </p>
+                    </ul>
+                </div>
+                <div id="#save">
+                    <button type="button" onclick="save_edits()">Save All Changes</button>
+                </div>
             </section>
             <section class="paragraph">
-                <h2>Paragraph style box</h2>
-                <p contenteditable="true"><i>Anything on your mind?</i>
+                <!-- <h2>Paragraph style box</h2> -->
+                <p id="paragraph" contenteditable="true" onclick="clickParagraph(event)"><i>Anything on your mind?</i>
             </section>
         </main>
         <script type="text/javascript" src="js/tab2.js"></script>

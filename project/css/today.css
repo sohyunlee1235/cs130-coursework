@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=KoHo:ital,wght@1,400&family=Krub:wght@500&display=swap');
+
 main {
     display: grid;
-    grid-template-columns: 8fr 5fr;
+    grid-template-columns: 9.5fr 5fr;
     grid-template-rows: auto;
     grid-template-areas: 
         "box time";
@@ -11,24 +13,86 @@ main {
     padding: 20px;
     padding-top: 5px;
     padding-right: 0px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 35px auto;
+    grid-template-areas: 
+        "title title"
+        "list1 list2";
+}
+
+.bulleted_list h2 {
+    grid-area: title;
+}
+
+#immediate_list {
+    grid-area: list1;
+    margin-right: 8px;
+}
+
+#extra_list {
+    grid-area: list2;
+    margin-left: 8px;
 }
 
 .bulleted_list ul {
     background-color: white;
+    list-style-type: '\25A2  ';
+    padding: 7px;
+    padding-left: 7.3mm;
+    overflow: inherit;
 }
 
-
-#date, #time {
-    grid-area: time;
-    display: flexbox;
+#more {
     background-color: white;
-    margin: 5px;
-    padding: 5px;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#more span {
+    font-size: 17pt;
+    color: rgb(105, 105, 105);
+    visibility: hidden;
+}
+
+#first_list, #second_list {
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .time {
-    display: flex;
-    flex-flow: column;
-    padding: 10px;
+    margin: 50px;
+    padding: 5px;
+    margin-top: 35px;
 }
 
+.time span {
+    font-size: 40pt;
+    text-shadow: -3px 3px 0 white,
+				  3px 3px 0 white,
+				 3px -3px 0 white,
+				-3px -3px 0 white;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 1000;
+    color: rgb(85, 85, 85);
+}
+
+.time br {
+    content: "";
+    margin: 2em;
+    display: block;
+    font-size: 20%;
+}
+
+#more:hover span{
+    visibility: visible;
+}
+
+[contenteditable="true"]:focus{
+    border:none;
+    outline:solid rgba(190, 190, 190, 0.883) 2px;
+}
+
+button:focus {
+    outline:none;
+}
