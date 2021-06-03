@@ -18,9 +18,9 @@
             <section class="bulleted_list">
                 <h2>This Month's tasks</h2>
                 <div id="month_list">
-                    <ul contenteditable="true" id="first_list" onkeydown="tab()">
-                        <li>registration</li>
-                        <li>Summer internship </li>
+                    <ul contenteditable="true" id="first_list">
+                        <li ondblclick="delete_list(event)">registration</li>
+                        <li ondblclick="delete_list(event)">Summer internship </li>
                         <p contenteditable="false" id="more" onclick="create_new_bullet_first(event)">
                             <span>&#43;</span>
                         </p>

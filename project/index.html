@@ -18,21 +18,21 @@
             <section class="bulleted_list">
                 <h2>Today's tasks</h2>
                 <div id="immediate_list">
-                    <ul contenteditable="true" id="first_list" onkeydown="tab()" onkeyup="backspace()">
-                        <li>Math homework</li>
-                        <li>essay </li>
-                        <li>volunteering </li>
+                    <ul contenteditable="true" id="first_list" onkeydown="tab(event)">
+                        <li ondblclick="delete_list(event)">Math homework</li>
+                        <li ondblclick="delete_list(event)">essay </li>
+                        <li ondblclick="delete_list(event)">volunteering </li>
                         <p contenteditable="false" id="more" onclick="create_new_bullet_first(event)">
                             <span>&#43;</span>
                         </p>
                     </ul>
                 </div>
                 <div id="extra_list">
-                    <ul contenteditable="true" id="second_list" onkeydown="tab()" onkeyup="backspace()">
-                        <li>Tutorial 1 </li>
-                        <li>Tutorial 3</li>
-                        <li>Tutorial 5</li>
-                        <li>finals </li>
+                    <ul contenteditable="true" id="second_list" onkeydown="tab(event)">
+                        <li ondblclick="delete_list(event)">Tutorial 1 </li>
+                        <li ondblclick="delete_list(event)">Tutorial 3</li>
+                        <li ondblclick="delete_list(event)">Tutorial 5</li>
+                        <li ondblclick="delete_list(event)">finals </li>
                         <p contenteditable="false" id="more" onclick="create_new_bullet_second(event)">
                             <span>&#43;</span>
                         </p>

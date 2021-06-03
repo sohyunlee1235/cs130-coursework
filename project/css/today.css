@@ -37,11 +37,19 @@ main {
 
 .bulleted_list ul {
     background-color: white;
-    list-style-type: '\25A2  ';
-    padding: 7px;
+    list-style-type: none;
+    padding: 10px;
+    padding-right: 8px;
     padding-left: 7.3mm;
     overflow: inherit;
 }
+
+li::before {
+    content: "\25A2  ";
+    display: inline-block;
+    width: 1.1em;
+    margin-left: -1.1em
+}     
 
 #more {
     background-color: white;
@@ -95,4 +103,36 @@ main {
 
 button:focus {
     outline:none;
+}
+
+.bulleted_list li:hover {
+    background-color: rgba(209, 209, 209, 0.404);
+}
+
+li:hover::before {
+    color: rgb(0, 182, 136);
+}
+
+li.marked::before {
+    content: '\2611  ';
+}
+
+li.marked {
+    text-decoration: line-through;
+}
+
+@keyframes disappear {
+    from {opacity: 100%;}
+    to {opacity: 0%;}
+}
+
+li.marked.deleted {
+    opacity: 100%;
+    animation-name: disappear;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+li.marked.deleted.nothing {
+    display: none;
 }
