@@ -61,16 +61,16 @@ nav div {
 }
 
 #today {
-    background-color: rgb(207, 241, 225);
+    background-color: rgb(0, 158, 182);
 }
 
 #month {
-    background-color: rgb(255, 255, 166);
+    background-color: rgb(233, 132, 157);
 }
 
 main {
     grid-area: main;
-    background-color: rgb(207, 241, 225);
+    background-color: rgb(0, 158, 182);
     border-top: rgb(173, 173, 173);
     /* border-top-style: solid; */
 }

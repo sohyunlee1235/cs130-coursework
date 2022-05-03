@@ -8,7 +8,7 @@
    </head>
    <body onload="check_edits()">
        <header>
-           <h1><a href="index.html">Daily Planner</a></h1>
+           <h1><a href="index.html">My Planner</a></h1>
        </header> 
        <nav>
            <div id="today"><a href="index.html">Today</a></div>
@@ -19,9 +19,8 @@
                 <h2>Today's tasks</h2>
                 <div id="immediate_list">
                     <ul contenteditable="true" id="first_list" onkeydown="tab(event)">
-                        <li ondblclick="delete_list(event)">Math homework</li>
+                        <li ondblclick="delete_list(event)">homework</li>
                         <li ondblclick="delete_list(event)">essay </li>
-                        <li ondblclick="delete_list(event)">volunteering </li>
                         <p contenteditable="false" id="more" onclick="create_new_bullet_first(event)">
                             <span>&#43;</span>
                         </p>
@@ -29,9 +28,6 @@
                 </div>
                 <div id="extra_list">
                     <ul contenteditable="true" id="second_list" onkeydown="tab(event)">
-                        <li ondblclick="delete_list(event)">Tutorial 1 </li>
-                        <li ondblclick="delete_list(event)">Tutorial 3</li>
-                        <li ondblclick="delete_list(event)">Tutorial 5</li>
                         <li ondblclick="delete_list(event)">finals </li>
                         <p contenteditable="false" id="more" onclick="create_new_bullet_second(event)">
                             <span>&#43;</span>

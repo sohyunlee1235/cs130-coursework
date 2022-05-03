@@ -4,7 +4,7 @@ main {
     grid-template-rows: auto;
     grid-template-areas: 
         "list paragraph";
-    background-color: rgb(255, 255, 166);
+    background-color: rgb(233, 132, 157);
 }
 
 .bulleted_list {
@@ -84,7 +84,7 @@ button:focus {
 }
 
 li:hover::before {
-    color: rgb(206, 192, 0);
+    color: rgb(214, 94, 124);
 }
 
 li.marked::before {

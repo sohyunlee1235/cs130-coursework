@@ -110,7 +110,7 @@ button:focus {
 }
 
 li:hover::before {
-    color: rgb(0, 182, 136);
+    color: rgb(0, 158, 182);
 }
 
 li.marked::before {
